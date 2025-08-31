@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Finally Found - فريق التطوير التقني</title>
+    <meta name="description" content="فريق تطوير تقني متخصص في تحويل الأخطاء إلى ابتكارات وتقديم حلول برمجية مبتكرة">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Light Theme Colors */
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #06b6d4;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+
+            /* Light Theme Background */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #e2e8f0;
+            --bg-card: #ffffff;
+            --bg-overlay: rgba(255, 255, 255, 0.95);
+
+            /* Light Theme Text */
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --text-inverse: #ffffff;
+
+            /* Light Theme Borders */
+            --border-color: #e2e8f0;
+            --border-hover: #cbd5e1;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+            --gradient-hero: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme Colors */
+            --primary-color: #3b82f6;
+            --secondary-color: #60a5fa;
+            --accent-color: #22d3ee;
+            --success-color: #34d399;
+            --warning-color: #fbbf24;
+            --error-color: #f87171;
+
+            /* Dark Theme Background */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --bg-card: #1e293b;
+            --bg-overlay: rgba(15, 23, 42, 0.95);
+
+            /* Dark Theme Text */
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --text-inverse: #0f172a;
+
+            /* Dark Theme Borders */
+            --border-color: #334155;
+            --border-hover: #475569;
+
+            /* Dark Gradients */
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            --gradient-secondary: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+            --gradient-accent: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+            --gradient-hero: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #22d3ee 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-overlay);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle, .lang-toggle {
+            background: none;
+            border: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover, .lang-toggle:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--gradient-hero);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--text-inverse);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+        .hero-title2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.7s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.9s forwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.1s forwards;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--text-inverse);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-inverse);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Floating Animation */
+        .floating {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .floating:nth-child(1) { top: 12%; left: 6%; animation-delay: 0s; }
+        .floating:nth-child(2) { top: 18%; right: 10%; animation-delay: 0.8s; }
+        .floating:nth-child(3) { top: 28%; left: 12%; animation-delay: 1.6s; }
+        .floating:nth-child(4) { top: 38%; right: 6%; animation-delay: 2.4s; }
+        .floating:nth-child(5) { top: 48%; left: 8%; animation-delay: 3.2s; }
+        .floating:nth-child(6) { top: 58%; right: 14%; animation-delay: 4s; }
+        .floating:nth-child(7) { top: 68%; left: 16%; animation-delay: 4.8s; }
+        .floating:nth-child(8) { top: 78%; right: 8%; animation-delay: 5.6s; }
+        .floating:nth-child(9) { bottom: 22%; left: 10%; animation-delay: 1.2s; }
+        .floating:nth-child(10) { bottom: 18%; right: 18%; animation-delay: 2s; }
+        .floating:nth-child(11) { top: 22%; left: 20%; animation-delay: 2.8s; }
+        .floating:nth-child(12) { top: 42%; right: 22%; animation-delay: 3.6s; }
+        .floating:nth-child(13) { top: 62%; left: 4%; animation-delay: 4.4s; }
+        .floating:nth-child(14) { bottom: 28%; right: 12%; animation-delay: 5.2s; }
+        .floating:nth-child(15) { bottom: 12%; left: 14%; animation-delay: 0.4s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+                opacity: 0.7;
+            }
+            25% {
+                transform: translateY(-15px) rotate(5deg) scale(1.1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-30px) rotate(-3deg) scale(0.9);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateY(-10px) rotate(8deg) scale(1.05);
+                opacity: 0.9;
+            }
+        }
+
+
+
+        /* Section positioning fix */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+            z-index: 10;
+            background: var(--bg-primary);
+        }
+
+        .hero {
+            position: relative;
+            z-index: 5;
+            isolation: isolate; /* Create new stacking context */
+        }
+
+
+
+        /* Improved card hover effects */
+        .card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            will-change: transform;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow:
+                var(--shadow-xl),
+                0 0 30px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Glowing effect for floating icons */
+        .floating i {
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        /* Enhanced hero background */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Smooth section transitions */
+        .section:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+
+        .section:nth-child(odd) {
+            background: var(--bg-primary);
+        }
+
+        /* Projects and Contact sections with distinct colors */
+        #projects {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%) !important;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        #projects::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="projects-pattern" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1" fill="rgba(59,130,246,0.1)"/></pattern></defs><rect width="60" height="60" fill="url(%23projects-pattern)"/></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        #contact {
+            background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%) !important;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><pattern id="contact-pattern" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20 0L20 40M0 20L40 20" stroke="rgba(6,182,212,0.08)" stroke-width="0.5"/></pattern></defs><rect width="40" height="40" fill="url(%23contact-pattern)"/></svg>');
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* Ensure content is above the pattern */
+        #projects .container,
+        #contact .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Dark mode specific styling for Projects and Contact sections */
+        [data-theme="dark"] #projects {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, #1a202c 100%) !important;
+            border-top: 1px solid var(--border-hover);
+            border-bottom: 1px solid var(--border-hover);
+        }
+
+        [data-theme="dark"] #projects::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="projects-pattern-dark" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1" fill="rgba(96,165,250,0.15)"/></pattern></defs><rect width="60" height="60" fill="url(%23projects-pattern-dark)"/></svg>');
+            opacity: 0.5;
+        }
+
+        [data-theme="dark"] #contact {
+            background: linear-gradient(135deg, #1a202c 0%, var(--bg-secondary) 100%) !important;
+            border-top: 1px solid var(--border-hover);
+            border-bottom: 1px solid var(--border-hover);
+        }
+
+        [data-theme="dark"] #contact::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><pattern id="contact-pattern-dark" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20 0L20 40M0 20L40 20" stroke="rgba(34,211,238,0.12)" stroke-width="0.5"/></pattern></defs><rect width="40" height="40" fill="url(%23contact-pattern-dark)"/></svg>');
+            opacity: 0.6;
+        }
+
+        /* Enhanced card styling for Projects and Contact sections */
+        #projects .card,
+        #contact .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        [data-theme="dark"] #projects .card,
+        [data-theme="dark"] #contact .card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid var(--border-hover);
+            box-shadow:
+                var(--shadow-xl),
+                0 0 20px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Expandable Card Styling */
+        .expandable-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .expandable-card.expanded {
+            transform: scale(1.02);
+        }
+
+        .expand-btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .expandable-content {
+            transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+        }
+
+        .expandable-content.expanded {
+            opacity: 1 !important;
+            max-height: 1000px !important;
+        }
+
+        .mini-project-card {
+            transition: all 0.3s ease;
+        }
+
+        .mini-project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Responsive grid for mini project cards */
+        @media (min-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Enhanced styling for expanded state */
+        .expandable-card.expanded .card-icon {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-inverse);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">404 Finally Found</a>
+
+            <ul class="nav-links">
+                <li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                <li><a href="#about" data-ar="من نحن" data-en="About">من نحن</a></li>
+                <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+                <li><a href="#projects" data-ar="مشاريعنا" data-en="Projects">مشاريعنا</a></li>
+                <li><a href="#team" data-ar="الفريق" data-en="Team">الفريق</a></li>
+                <li><a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></li>
+            </ul>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="lang-toggle" onclick="toggleLanguage()">
+                    <span id="lang-text">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title"></h1>
+                <h1 class="hero-title2"></h1>
+                <p class="hero-subtitle" data-ar="نحوّل الأخطاء إلى ابتكارات" data-en="Turning Errors into Innovations">نحوّل الأخطاء إلى ابتكارات</p>
+                <p class="hero-description" data-ar="فريق تطوير تقني متخصص في تقديم حلول برمجية مبتكرة تمزج بين الإبداع والاحترافية" data-en="A technical development team specialized in providing innovative software solutions that blend creativity and professionalism">فريق تطوير تقني متخصص في تقديم حلول برمجية مبتكرة تمزج بين الإبداع والاحترافية</p>
+
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span data-ar="استكشف مشاريعنا" data-en="Explore Our Projects">استكشف مشاريعنا</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="floating">
+            <i class="fas fa-code" style="font-size: 2.5rem; color: #ff3838; text-shadow: 0 0 25px rgba(255,56,56,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-laptop-code" style="font-size: 2rem; color: #00d2d3; text-shadow: 0 0 25px rgba(0,210,211,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-mobile-alt" style="font-size: 2.2rem; color: #ff9ff3; text-shadow: 0 0 25px rgba(255,159,243,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-database" style="font-size: 1.8rem; color: #feca57; text-shadow: 0 0 25px rgba(254,202,87,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-cloud" style="font-size: 2.3rem; color: #ff6348; text-shadow: 0 0 25px rgba(255,99,72,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-rocket" style="font-size: 2rem; color: #1dd1a1; text-shadow: 0 0 25px rgba(29,209,161,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-cog" style="font-size: 1.9rem; color: #ff9ff3; text-shadow: 0 0 25px rgba(255,159,243,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-brain" style="font-size: 2.1rem; color: #54a0ff; text-shadow: 0 0 25px rgba(84,160,255,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-wifi" style="font-size: 1.7rem; color: #5f27cd; text-shadow: 0 0 25px rgba(95,39,205,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-shield-alt" style="font-size: 2rem; color: #00d2d3; text-shadow: 0 0 25px rgba(0,210,211,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-microchip" style="font-size: 2.4rem; color: #ff9f43; text-shadow: 0 0 25px rgba(255,159,67,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-server" style="font-size: 1.9rem; color: #ee5a6f; text-shadow: 0 0 25px rgba(238,90,111,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-network-wired" style="font-size: 2.1rem; color: #0abde3; text-shadow: 0 0 25px rgba(10,189,227,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-bug" style="font-size: 1.8rem; color: #ff6b6b; text-shadow: 0 0 25px rgba(255,107,107,0.8);"></i>
+        </div>
+        <div class="floating">
+            <i class="fas fa-terminal" style="font-size: 2.2rem; color: #48dbfb; text-shadow: 0 0 25px rgba(72,219,251,0.8);"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ar="من نحن" data-en="About Us">من نحن</h2>
+            <p class="section-subtitle" data-ar="تعرف على رؤيتنا ورسالتنا وقيمنا التي تقودنا نحو التميز" data-en="Learn about our vision, mission, and values that drive us towards excellence">تعرف على رؤيتنا ورسالتنا وقيمنا التي تقودنا نحو التميز</p>
+
+            <div class="grid grid-3">
+                <!-- Vision Card -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="card-title" data-ar="الرؤية" data-en="Vision">الرؤية</h3>
+                    <p class="card-description" data-ar="أن نصبح فريقًا تقنيًا يُحوّل الأخطاء إلى ابتكارات، ويُقدّم حلولًا برمجية مبتكرة تمزج بين الإبداع والاحترافية، لنترك بصمة في عالم التقنية." data-en="To become a technical team that transforms errors into innovations, providing innovative software solutions that blend creativity and professionalism, leaving our mark in the tech world.">أن نصبح فريقًا تقنيًا يُحوّل الأخطاء إلى ابتكارات، ويُقدّم حلولًا برمجية مبتكرة تمزج بين الإبداع والاحترافية، لنترك بصمة في عالم التقنية.</p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="card-title" data-ar="الرسالة" data-en="Mission">الرسالة</h3>
+                    <p class="card-description" data-ar="في '404 Finally Found'، نؤمن أن كل خطأ هو بداية حل جديد. نصمم ونطوّر برمجيات عالية الجودة، بلمسة عصرية، ونعمل بروح الفريق، ملتزمين بالتعلم المستمر وخدمة عملائنا." data-en="At '404 Finally Found', we believe every error is the beginning of a new solution. We design and develop high-quality software with a modern touch, working as a team, committed to continuous learning and serving our clients.">في "404 Finally Found"، نؤمن أن كل خطأ هو بداية حل جديد. نصمم ونطوّر برمجيات عالية الجودة، بلمسة عصرية، ونعمل بروح الفريق، ملتزمين بالتعلم المستمر وخدمة عملائنا.</p>
+                </div>
+
+                <!-- Values Card -->
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="card-title" data-ar="القيم" data-en="Values">القيم</h3>
+                    <p class="card-description" data-ar="الإبداع قبل الكود • الجودة مش خيار • روح الفريق • التعلم المستمر • المرونة في الحلول" data-en="Creativity before code • Quality is not optional • Team spirit • Continuous learning • Flexibility in solutions">الإبداع قبل الكود • الجودة مش خيار • روح الفريق • التعلم المستمر • المرونة في الحلول</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title" data-ar="خدماتنا" data-en="Our Services">خدماتنا</h2>
+            <p class="section-subtitle" data-ar="نقدم مجموعة شاملة من الخدمات التقنية المتطورة" data-en="We offer a comprehensive range of advanced technical services">نقدم مجموعة شاملة من الخدمات التقنية المتطورة</p>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="card-title" data-ar="تطوير تطبيقات الجوال" data-en="Mobile App Development">تطوير تطبيقات الجوال</h3>
+                    <p class="card-description" data-ar="تطوير تطبيقات ذكية ومبتكرة لأنظمة Android و iOS باستخدام أحدث التقنيات مثل Flutter و React Native" data-en="Developing smart and innovative applications for Android and iOS using the latest technologies like Flutter and React Native">تطوير تطبيقات ذكية ومبتكرة لأنظمة Android و iOS باستخدام أحدث التقنيات مثل Flutter و React Native</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="card-title" data-ar="تطوير المواقع الإلكترونية" data-en="Web Development">تطوير المواقع الإلكترونية</h3>
+                    <p class="card-description" data-ar="إنشاء مواقع إلكترونية متجاوبة وسريعة باستخدام أحدث تقنيات الويب والتصميم العصري" data-en="Creating responsive and fast websites using the latest web technologies and modern design">إنشاء مواقع إلكترونية متجاوبة وسريعة باستخدام أحدث تقنيات الويب والتصميم العصري</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="card-title" data-ar="تصميم واجهات المستخدم" data-en="UI/UX Design">تصميم واجهات المستخدم</h3>
+                    <p class="card-description" data-ar="تصميم واجهات مستخدم جذابة وسهلة الاستخدام تركز على تجربة المستخدم المثلى" data-en="Designing attractive and user-friendly interfaces focused on optimal user experience">تصميم واجهات مستخدم جذابة وسهلة الاستخدام تركز على تجربة المستخدم المثلى</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title" data-ar="مشاريعنا" data-en="Our Projects">مشاريعنا</h2>
+            <p class="section-subtitle" data-ar="اكتشف مشاريعنا المميزة التي تعكس خبرتنا وإبداعنا في التطوير" data-en="Discover our outstanding projects that reflect our expertise and creativity in development">اكتشف مشاريعنا المميزة التي تعكس خبرتنا وإبداعنا في التطوير</p>
+
+            <div class="grid grid-2">
+                <!-- Conceptual Dictionary Project -->
+                <div class="card" style="background: var(--gradient-primary); color: var(--text-inverse); border: none;">
+                    <div class="card-icon" style="background: rgba(255,255,255,0.2);">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="card-title" style="color: var(--text-inverse);" data-ar="قاموس المصطلحات" data-en="Conceptual Dictionary">قاموس المصطلحات</h3>
+                    <p class="card-description" style="color: rgba(255,255,255,0.9);" data-ar="تطبيق تعليمي شامل يحتوي على آلاف المصطلحات في مختلف المجالات مع دعم اللغتين العربية والإنجليزية، ويتضمن ميزات متقدمة مثل الاختبارات التفاعلية والمجموعات المخصصة." data-en="A comprehensive educational app containing thousands of terms in various fields with Arabic and English support, featuring advanced capabilities like interactive quizzes and custom collections.">تطبيق تعليمي شامل يحتوي على آلاف المصطلحات في مختلف المجالات مع دعم اللغتين العربية والإنجليزية، ويتضمن ميزات متقدمة مثل الاختبارات التفاعلية والمجموعات المخصصة.</p>
+
+                    <div style="margin-top: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Flutter</span>
+                        <span style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Dart</span>
+                        <span style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">SQLite</span>
+                        <span style="background: rgba(255,255,255,0.2); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem;">Material Design</span>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                        <a href="#" class="btn" style="background: rgba(255,255,255,0.2); color: var(--text-inverse); border: 1px solid rgba(255,255,255,0.3); padding: 0.5rem 1rem; font-size: 0.9rem;">
+                            <i class="fab fa-google-play"></i>
+                            <span data-ar="تحميل من متجر جوجل" data-en="Download from Play Store">تحميل من متجر جوجل</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Project -->
+                <div class="card expandable-card" id="coming-soon-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="card-title" data-ar="مشاريع قادمة" data-en="Coming Soon">مشاريع قادمة</h3>
+                    <p class="card-description" data-ar="نعمل حاليًا على مشاريع مثيرة جديدة ستكون متاحة قريبًا. اضغط لرؤية قائمة المشاريع القادمة." data-en="We are currently working on exciting new projects that will be available soon. Click to see the list of upcoming projects.">نعمل حاليًا على مشاريع مثيرة جديدة ستكون متاحة قريبًا. اضغط لرؤية قائمة المشاريع القادمة.</p>
+
+                    <!-- Expand/Collapse Button -->
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <button class="expand-btn" onclick="toggleComingSoon()" style="background: var(--gradient-primary); color: var(--text-inverse); border: none; padding: 0.5rem 1rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem; margin: 0 auto;">
+                            <span id="expand-text" data-ar="عرض المشاريع" data-en="Show Projects">عرض المشاريع</span>
+                            <i class="fas fa-chevron-down" id="expand-icon" style="transition: transform 0.3s ease;"></i>
+                        </button>
+                    </div>
+
+                    <!-- Expandable Content -->
+                    <div class="expandable-content" id="projects-list" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.3s ease; opacity: 0; margin-top: 1rem;">
+                        <div style="padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                            <h4 style="color: var(--text-primary); margin-bottom: 1rem; text-align: center;" data-ar="المشاريع القادمة" data-en="Upcoming Projects">المشاريع القادمة</h4>
+
+                            <div class="projects-grid" style="display: grid; gap: 1rem;">
+                                <!-- College Corner App -->
+                                <div class="mini-project-card" style="background: var(--bg-tertiary); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <div style="width: 40px; height: 40px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--text-inverse);">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <div>
+                                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;" data-ar="تطبيق الركن الجامعي" data-en="College Corner App">تطبيق الركن الجامعي</h5>
+                                            <p style="color: var(--text-secondary); font-size: 0.9rem;" data-ar="منصة تعليمية شاملة للطلاب الجامعيين" data-en="Comprehensive educational platform for university students">منصة تعليمية شاملة للطلاب الجامعيين</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- The Detective App -->
+                                <div class="mini-project-card" style="background: var(--bg-tertiary); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <div style="width: 40px; height: 40px; background: var(--gradient-secondary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--text-inverse);">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <div>
+                                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;" data-ar="تطبيق المحقق" data-en="The Detective App">تطبيق المحقق</h5>
+                                            <p style="color: var(--text-secondary); font-size: 0.9rem;" data-ar="لعبة ألغاز وتحقيق تفاعلية ومثيرة" data-en="Interactive and exciting mystery puzzle game">لعبة ألغاز وتحقيق تفاعلية ومثيرة</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- I Dare You App -->
+                                <div class="mini-project-card" style="background: var(--bg-tertiary); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <div style="width: 40px; height: 40px; background: var(--gradient-accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--text-inverse);">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                        <div>
+                                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;" data-ar="تطبيق أتحداك" data-en="I Dare You App">تطبيق أتحداك</h5>
+                                            <p style="color: var(--text-secondary); font-size: 0.9rem;" data-ar="تطبيق تحديات اجتماعية ممتعة ومفيدة" data-en="Fun and useful social challenges app">تطبيق تحديات اجتماعية ممتعة ومفيدة</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tabkha (Food) App -->
+                                <div class="mini-project-card" style="background: var(--bg-tertiary); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                                    <div style="display: flex; align-items: center; gap: 1rem;">
+                                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--text-inverse);">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <div>
+                                            <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;" data-ar="تطبيق طبخة" data-en="Tabkha (Food) App">تطبيق طبخة</h5>
+                                            <p style="color: var(--text-secondary); font-size: 0.9rem;" data-ar="تطبيق وصفات طبخ وتوصيل طعام" data-en="Cooking recipes and food delivery app">تطبيق وصفات طبخ وتوصيل طعام</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title" data-ar="الفريق" data-en="Our Team">الفريق</h2>
+            <p class="section-subtitle" data-ar="تعرف على الأشخاص المبدعين وراء نجاح مشاريعنا" data-en="Meet the creative people behind the success of our projects">تعرف على الأشخاص المبدعين وراء نجاح مشاريعنا</p>
+
+            <div class="grid grid-4">
+                <div class="card">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <div style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: var(--text-inverse); font-size: 2rem;">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="card-title" data-ar="فريق التطوير" data-en="Development Team">فريق التطوير</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-ar="مطورون متخصصون" data-en="Specialized Developers">مطورون متخصصون</p>
+                        <p class="card-description" data-ar="فريق من المطورين المتميزين المتخصصين في تقنيات متعددة" data-en="A team of outstanding developers specialized in multiple technologies">فريق من المطورين المتميزين المتخصصين في تقنيات متعددة</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <div style="width: 80px; height: 80px; background: var(--gradient-secondary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: var(--text-inverse); font-size: 2rem;">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="card-title" data-ar="فريق التصميم" data-en="Design Team">فريق التصميم</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-ar="مصممو واجهات" data-en="UI/UX Designers">مصممو واجهات</p>
+                        <p class="card-description" data-ar="مصممون مبدعون يركزون على تجربة المستخدم المثلى" data-en="Creative designers focused on optimal user experience">مصممون مبدعون يركزون على تجربة المستخدم المثلى</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <div style="width: 80px; height: 80px; background: var(--gradient-accent); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: var(--text-inverse); font-size: 2rem;">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3 class="card-title" data-ar="فريق الجودة" data-en="Quality Team">فريق الجودة</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-ar="ضمان الجودة" data-en="Quality Assurance">ضمان الجودة</p>
+                        <p class="card-description" data-ar="متخصصون في اختبار وضمان جودة المنتجات" data-en="Specialists in testing and ensuring product quality">متخصصون في اختبار وضمان جودة المنتجات</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <div style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: var(--text-inverse); font-size: 2rem;">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="card-title" data-ar="فريق الابتكار" data-en="Innovation Team">فريق الابتكار</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;" data-ar="البحث والتطوير" data-en="Research & Development">البحث والتطوير</p>
+                        <p class="card-description" data-ar="باحثون ومبتكرون يعملون على أحدث التقنيات" data-en="Researchers and innovators working on the latest technologies">باحثون ومبتكرون يعملون على أحدث التقنيات</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
+            <p class="section-subtitle" data-ar="نحن هنا لمساعدتك في تحقيق أفكارك التقنية" data-en="We're here to help you realize your technical ideas">نحن هنا لمساعدتك في تحقيق أفكارك التقنية</p>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title" data-ar="معلومات التواصل" data-en="Contact Information">معلومات التواصل</h3>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-inverse);">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</h4>
+                                <p style="color: var(--text-secondary);">team404finallyfound@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 50px; height: 50px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-inverse);">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);" data-ar="تليجرام" data-en="Telegram">تليجرام</h4>
+                                <p style="color: var(--text-secondary);">@Team404FF</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="width: 50px; height: 50px; background: var(--gradient-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-inverse);">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);" data-ar="جيت هاب" data-en="GitHub">جيت هاب</h4>
+                                <p style="color: var(--text-secondary);">github.com/team404finallyfound</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div style="margin-top: 2rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--text-primary);" data-ar="تابعنا على" data-en="Follow Us">تابعنا على</h4>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://www.facebook.com/team404finallyfound/" style="width: 40px; height: 40px; background: #1877f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://x.com/team404FF" style="width: 40px; height: 40px; background: #1da1f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/team404ff/" style="width: 40px; height: 40px; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@team404ff" style="width: 40px; height: 40px; background: #ff0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://t.me/Team404FF" style="width: 40px; height: 40px; background: #0088cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title" data-ar="أرسل لنا رسالة" data-en="Send Us a Message">أرسل لنا رسالة</h3>
+
+                    <form style="margin-top: 2rem;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;" data-ar="الاسم" data-en="Name">الاسم</label>
+                            <input type="text" style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: 10px; background: var(--bg-primary); color: var(--text-primary); font-family: inherit; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--primary-color)'" onblur="this.style.borderColor='var(--border-color)'">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+                            <input type="email" style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: 10px; background: var(--bg-primary); color: var(--text-primary); font-family: inherit; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--primary-color)'" onblur="this.style.borderColor='var(--border-color)'">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;" data-ar="الرسالة" data-en="Message">الرسالة</label>
+                            <textarea rows="5" style="width: 100%; padding: 0.75rem; border: 2px solid var(--border-color); border-radius: 10px; background: var(--bg-primary); color: var(--text-primary); font-family: inherit; resize: vertical; transition: border-color 0.3s ease;" onfocus="this.style.borderColor='var(--primary-color)'" onblur="this.style.borderColor='var(--border-color)'"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn" style="background: var(--gradient-primary); color: var(--text-inverse); border: none; width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-secondary); padding: 3rem 0 1rem; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="font-size: 1.5rem; font-weight: 700; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">404 Finally Found</h3>
+                <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;" data-ar="نحوّل الأخطاء إلى ابتكارات ونقدم حلول برمجية مبتكرة" data-en="We turn errors into innovations and provide innovative software solutions">نحوّل الأخطاء إلى ابتكارات ونقدم حلول برمجية مبتكرة</p>
+            </div>
+
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color); color: var(--text-secondary);">
+                <p>&copy; 2025 404 Finally Found. <span data-ar="جميع الحقوق محفوظة" data-en="All rights reserved">جميع الحقوق محفوظة</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Management
+        let currentTheme = localStorage.getItem('theme') || 'light';
+        let currentLang = localStorage.getItem('language') || 'ar';
+
+        // Initialize theme and language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            applyTheme(currentTheme);
+            applyLanguage(currentLang);
+
+
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'var(--bg-overlay)';
+                    navbar.style.backdropFilter = 'blur(20px)';
+                } else {
+                    navbar.style.background = 'var(--bg-overlay)';
+                    navbar.style.backdropFilter = 'blur(20px)';
+                }
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards and sections
+            document.querySelectorAll('.card, .section').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        function toggleTheme() {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(currentTheme);
+            localStorage.setItem('theme', currentTheme);
+        }
+
+        function applyTheme(theme) {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+
+            if (theme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                body.removeAttribute('data-theme');
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            applyLanguage(currentLang);
+            localStorage.setItem('language', currentLang);
+        }
+
+        function applyLanguage(lang) {
+            const html = document.documentElement;
+            const langText = document.getElementById('lang-text');
+
+            if (lang === 'en') {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                langText.textContent = 'عر';
+
+                // Update all text elements
+                document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+                    el.textContent = el.getAttribute('data-en');
+                });
+
+                // Update expand button text
+                updateExpandButtonText();
+            } else {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                langText.textContent = 'EN';
+
+                // Update all text elements
+                document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+                    el.textContent = el.getAttribute('data-ar');
+                });
+
+                // Update expand button text
+                updateExpandButtonText();
+            }
+        }
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const message = this.querySelector('textarea').value;
+
+            if (name && email && message) {
+                // Create mailto link
+                const subject = encodeURIComponent('رسالة من موقع 404 Finally Found');
+                const body = encodeURIComponent(`الاسم: ${name}\nالبريد الإلكتروني: ${email}\n\nالرسالة:\n${message}`);
+                const mailtoLink = `mailto:team404finallyfound@gmail.com?subject=${subject}&body=${body}`;
+
+                // Open email client
+                window.location.href = mailtoLink;
+
+                // Reset form
+                this.reset();
+
+                // Show success message
+                alert(currentLang === 'ar' ? 'تم إرسال الرسالة بنجاح!' : 'Message sent successfully!');
+            } else {
+                alert(currentLang === 'ar' ? 'يرجى ملء جميع الحقول' : 'Please fill all fields');
+            }
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Typing effect for hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+
+            type();
+        }
+
+        // Initialize typing effect after page load
+        setTimeout(() => {
+            const heroTitle = document.querySelector('.hero-title');
+            const heroTitle2 = document.querySelector('.hero-title2');
+            if (heroTitle) {
+                typeWriter(heroTitle, '404', 150);
+                typeWriter(heroTitle2, 'Finally Found', 150);
+            }
+        }, 1000);
+
+        // Add improved parallax effect to hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+
+            if (hero && scrolled < hero.offsetHeight) {
+                // Move background slower than scroll
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+
+                // Move content slightly faster for depth effect
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.1}px)`;
+                }
+
+                // Fade out hero content as user scrolls
+                const opacity = Math.max(0, 1 - (scrolled / (hero.offsetHeight * 0.8)));
+                heroContent.style.opacity = opacity;
+            }
+        });
+
+        // Add click effect to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.pointerEvents = 'none';
+
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+
+
+        // Enhanced floating icons animation with diverse colors
+        function enhanceFloatingIcons() {
+            const floatingIcons = document.querySelectorAll('.floating');
+
+            // Diverse color palette for dynamic effects
+            const vibrantColors = [
+                '#ff3838', '#00d2d3', '#ff9ff3', '#feca57', '#ff6348',
+                '#1dd1a1', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3',
+                '#ff9f43', '#ee5a6f', '#0abde3', '#ff6b6b', '#48dbfb',
+                '#ff7675', '#74b9ff', '#a29bfe', '#fd79a8', '#fdcb6e'
+            ];
+
+            floatingIcons.forEach((icon, index) => {
+                // Add random rotation and scale variations
+                icon.addEventListener('animationiteration', function() {
+                    const randomRotation = Math.random() * 30 - 15; // -15 to 15 degrees
+                    const randomScale = Math.random() * 0.4 + 0.8; // 0.8 to 1.2 scale
+
+                    this.style.setProperty('--random-rotation', randomRotation + 'deg');
+                    this.style.setProperty('--random-scale', randomScale);
+
+                    // Occasionally change color for extra dynamism
+                    if (Math.random() > 0.95) {
+                        const randomColor = vibrantColors[Math.floor(Math.random() * vibrantColors.length)];
+                        const iconElement = this.querySelector('i');
+                        if (iconElement) {
+                            iconElement.style.color = randomColor;
+                            iconElement.style.textShadow = `0 0 25px ${randomColor}80`;
+                        }
+                    }
+                });
+
+                // Enhanced glow effect on hover
+                icon.addEventListener('mouseenter', function() {
+                    const iconElement = this.querySelector('i');
+                    if (iconElement) {
+                        const currentColor = window.getComputedStyle(iconElement).color;
+                        this.style.filter = `brightness(1.8) drop-shadow(0 0 30px currentColor) saturate(1.5)`;
+                        this.style.transform = 'scale(1.4) rotate(10deg)';
+                        this.style.zIndex = '1000';
+                    }
+                });
+
+                icon.addEventListener('mouseleave', function() {
+                    this.style.filter = 'none';
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                    this.style.zIndex = '1';
+                });
+
+                // Add pulsing effect to some icons
+                if (index % 3 === 0) {
+                    icon.style.animation += ', pulse 4s ease-in-out infinite';
+                }
+            });
+        }
+
+        // Add pulse animation CSS
+        const pulseStyle = document.createElement('style');
+        pulseStyle.textContent = `
+            @keyframes pulse {
+                0%, 100% {
+                    filter: brightness(1) saturate(1);
+                }
+                50% {
+                    filter: brightness(1.3) saturate(1.2);
+                }
+            }
+        `;
+        document.head.appendChild(pulseStyle);
+
+        // Initialize enhanced animations
+        setTimeout(() => {
+            enhanceFloatingIcons();
+        }, 1000);
+
+        // Coming Soon Projects Expand/Collapse Function
+        function toggleComingSoon() {
+            const card = document.getElementById('coming-soon-card');
+            const content = document.getElementById('projects-list');
+            const icon = document.getElementById('expand-icon');
+            const text = document.getElementById('expand-text');
+            const isExpanded = content.classList.contains('expanded');
+
+            if (isExpanded) {
+                // Collapse
+                content.classList.remove('expanded');
+                card.classList.remove('expanded');
+                icon.style.transform = 'rotate(0deg)';
+
+                // Update button text
+                if (currentLang === 'ar') {
+                    text.textContent = 'عرض المشاريع';
+                } else {
+                    text.textContent = 'Show Projects';
+                }
+
+                // Smooth scroll to card top after collapse
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+
+            } else {
+                // Expand
+                content.classList.add('expanded');
+                card.classList.add('expanded');
+                icon.style.transform = 'rotate(180deg)';
+
+                // Update button text
+                if (currentLang === 'ar') {
+                    text.textContent = 'إخفاء المشاريع';
+                } else {
+                    text.textContent = 'Hide Projects';
+                }
+
+                // Add staggered animation to mini cards
+                const miniCards = content.querySelectorAll('.mini-project-card');
+                miniCards.forEach((miniCard, index) => {
+                    miniCard.style.opacity = '0';
+                    miniCard.style.transform = 'translateY(20px)';
+
+                    setTimeout(() => {
+                        miniCard.style.transition = 'all 0.5s ease';
+                        miniCard.style.opacity = '1';
+                        miniCard.style.transform = 'translateY(0)';
+                    }, 200 + (index * 100)); // Stagger by 100ms
+                });
+            }
+        }
+
+        // Update expand button text when language changes
+        function updateExpandButtonText() {
+            const text = document.getElementById('expand-text');
+            const content = document.getElementById('projects-list');
+            const isExpanded = content && content.classList.contains('expanded');
+
+            if (text) {
+                if (isExpanded) {
+                    text.textContent = currentLang === 'ar' ? 'إخفاء المشاريع' : 'Hide Projects';
+                } else {
+                    text.textContent = currentLang === 'ar' ? 'عرض المشاريع' : 'Show Projects';
+                }
+            }
+        }
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+
+            .floating {
+                transition: all 0.3s ease;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
