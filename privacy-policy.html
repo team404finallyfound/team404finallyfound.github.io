@@ -1,263 +1,143 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - قاموس المصطلحات | Privacy Policy - Conceptual Dictionary</title>
-    <meta name="description" content="سياسة الخصوصية لتطبيق قاموس المصطلحات من فريق 404 Finally Found">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            /* Light Theme Colors */
-            --primary-color: #1e40af;
-            --secondary-color: #3b82f6;
-            --accent-color: #06b6d4;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-tertiary: #e2e8f0;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --border-color: #e2e8f0;
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسات الخصوصية | Privacy Policies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #1e40af;
+      --secondary-color: #3b82f6;
+      --accent-color: #06b6d4;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-tertiary: #e2e8f0;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                   0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    [data-theme="dark"] {
+      --primary-color: #3b82f6;
+      --secondary-color: #60a5fa;
+      --accent-color: #22d3ee;
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-tertiary: #334155;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --border-color: #334155;
+    }
+    body {
+      font-family: 'Cairo','Inter',sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.active {
+      background: var(--primary-color);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+    .content {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
 
-        [data-theme="dark"] {
-            --primary-color: #3b82f6;
-            --secondary-color: #60a5fa;
-            --accent-color: #22d3ee;
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Cairo', 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: all 0.3s ease;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 20px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .content {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 2rem;
-        }
-
-        .section {
-            margin-bottom: 2rem;
-        }
-
-        .section h2 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .section h3 {
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.5rem 0;
-        }
-
-        .section p, .section li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .section ul {
-            padding-right: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info {
-            background: var(--bg-tertiary);
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin-top: 1rem;
-        }
-
-        .contact-info h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-info p {
-            color: var(--text-primary);
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--gradient-primary);
-            color: white;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-
-        .back-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            background: var(--bg-secondary);
-            border: 2px solid var(--border-color);
-            color: var(--text-secondary);
-            padding: 0.5rem;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        .lang-toggle {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            background: var(--bg-secondary);
-            border: 2px solid var(--border-color);
-            color: var(--text-secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            z-index: 1000;
-        }
-
-        .lang-toggle:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .content {
-                padding: 1.5rem;
-            }
-            
-            .theme-toggle, .lang-toggle {
-                top: 1rem;
-            }
-            
-            .theme-toggle {
-                left: 1rem;
-            }
-            
-            .lang-toggle {
-                right: 1rem;
-            }
-        }
-    </style>
+    .section h2 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 1rem;
+      padding-bottom: 0.3rem;
+    }
+    .section p, .section li { color: var(--text-secondary); }
+    .theme-toggle, .lang-toggle {
+      position: fixed;
+      top: 1rem;
+      z-index: 1000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .theme-toggle {
+      left: 1rem;
+      width: 45px; height: 45px;
+      border-radius: 50%;
+      border: 2px solid var(--border-color);
+      background: var(--bg-secondary);
+      display: flex; align-items:center; justify-content:center;
+      color: var(--text-secondary);
+    }
+    .lang-toggle {
+      right: 1rem;
+      border-radius: 25px;
+      border: 2px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-moon" id="theme-icon"></i>
-    </button>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon" id="theme-icon"></i>
+  </button>
 
-    <!-- Language Toggle -->
-    <button class="lang-toggle" onclick="toggleLanguage()">
-        <span id="lang-text">EN</span>
-    </button>
+  <!-- Language Toggle -->
+  <button class="lang-toggle" onclick="toggleLanguage()">
+    <span id="lang-text">EN</span>
+  </button>
 
-    <div class="container">
-        <!-- Back Button -->
-        <a href="index.html" class="back-btn">
-            <i class="fas fa-arrow-right"></i>
-            <span data-ar="العودة للموقع" data-en="Back to Website">العودة للموقع</span>
-        </a>
+  <div class="container">
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="openTab('dict')"
+        data-ar="قاموس المصطلحات" data-en="Conceptual Dictionary">قاموس المصطلحات</button>
+      <button class="tab-btn" onclick="openTab('college')"
+        data-ar="College Corner" data-en="College Corner">College Corner</button>
+    </div>
 
-        <!-- Header -->
-        <div class="header">
-            <h1 data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</h1>
-            <p data-ar="تطبيق قاموس المصطلحات - فريق 404 Finally Found" data-en="Conceptual Dictionary App - 404 Finally Found Team">تطبيق قاموس المصطلحات - فريق 404 Finally Found</p>
-        </div>
-
-        <!-- Content -->
-        <div class="content">
-            <!-- Introduction -->
-            <div class="section">
-                <h2 data-ar="مقدمة" data-en="Introduction">مقدمة</h2>
-                <p data-ar="نحن في فريق '404 Finally Found' نقدر خصوصيتك ونلتزم بحماية معلوماتك الشخصية. توضح سياسة الخصوصية هذه كيفية جمع واستخدام وحماية معلوماتك عند استخدام تطبيق 'قاموس المصطلحات'." data-en="We at '404 Finally Found' team value your privacy and are committed to protecting your personal information. This privacy policy explains how we collect, use, and protect your information when using the 'Conceptual Dictionary' app.">نحن في فريق "404 Finally Found" نقدر خصوصيتك ونلتزم بحماية معلوماتك الشخصية. توضح سياسة الخصوصية هذه كيفية جمع واستخدام وحماية معلوماتك عند استخدام تطبيق "قاموس المصطلحات".</p>
+    <div class="content">
+      <!-- Conceptual Dictionary Policy -->
+      <div id="dict" class="tab-content active">
+        <div class="section">
+          <h2 data-ar="مقدمة" data-en="Introduction">مقدمة</h2>
+          <p data-ar="نحن في فريق 404 Finally Found نقدر خصوصيتك ونلتزم بحماية معلوماتك..." 
+             data-en="We at '404 Finally Found' value your privacy and are committed to protecting your information...">
+            نحن في فريق 404 Finally Found نقدر خصوصيتك ونلتزم بحماية معلوماتك...
+          </p>
             </div>
-
             <!-- Information We Collect -->
             <div class="section">
                 <h2 data-ar="المعلومات التي نجمعها" data-en="Information We Collect">المعلومات التي نجمعها</h2>
@@ -332,66 +212,64 @@
                 </div>
             </div>
         </div>
+         <!-- College Corner Policy -->
+      <div id="college" class="tab-content">
+        <div class="section">
+          <h2 data-ar="سياسة الخصوصية - College Corner" data-en="Privacy Policy - College Corner">
+            سياسة الخصوصية - College Corner
+          </h2>
+          <p data-ar="تطبيق College Corner يعمل بشكل كامل بدون إنترنت ولا يجمع أي بيانات. جميع المعلومات محفوظة محلياً على جهازك ولا يتم إرسالها لأي خادم خارجي. لا توجد حسابات، لا تتبع، ولا جمع بيانات – خصوصيتك محمية 100%."
+             data-en="College Corner works completely offline and collects zero user data. All information is stored locally on your device and never transmitted to external servers. No accounts, no tracking, no data collection – your privacy is 100% protected.">
+            تطبيق College Corner يعمل بشكل كامل بدون إنترنت ولا يجمع أي بيانات. جميع المعلومات محفوظة محلياً على جهازك ولا يتم إرسالها لأي خادم خارجي. لا توجد حسابات، لا تتبع، ولا جمع بيانات – خصوصيتك محمية 100%.
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script>
-        // Theme and Language Management
-        let currentTheme = localStorage.getItem('theme') || 'light';
-        let currentLang = localStorage.getItem('language') || 'ar';
+  <script>
+    // Tab switching
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            applyTheme(currentTheme);
-            applyLanguage(currentLang);
-        });
+    // Theme + Language handling
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    let currentLang = localStorage.getItem('language') || 'ar';
 
-        function toggleTheme() {
-            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-            applyTheme(currentTheme);
-            localStorage.setItem('theme', currentTheme);
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+      applyTheme(currentTheme);
+      applyLanguage(currentLang);
+    });
 
-        function applyTheme(theme) {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-            
-            if (theme === 'dark') {
-                body.setAttribute('data-theme', 'dark');
-                themeIcon.className = 'fas fa-sun';
-            } else {
-                body.removeAttribute('data-theme');
-                themeIcon.className = 'fas fa-moon';
-            }
-        }
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            applyLanguage(currentLang);
-            localStorage.setItem('language', currentLang);
-        }
-
-        function applyLanguage(lang) {
-            const html = document.documentElement;
-            const langText = document.getElementById('lang-text');
-            
-            if (lang === 'en') {
-                html.setAttribute('lang', 'en');
-                html.setAttribute('dir', 'ltr');
-                langText.textContent = 'عر';
-                
-                document.querySelectorAll('[data-ar][data-en]').forEach(el => {
-                    el.textContent = el.getAttribute('data-en');
-                });
-            } else {
-                html.setAttribute('lang', 'ar');
-                html.setAttribute('dir', 'rtl');
-                langText.textContent = 'EN';
-                
-                document.querySelectorAll('[data-ar][data-en]').forEach(el => {
-                    el.textContent = el.getAttribute('data-ar');
-                });
-            }
-        }
-    </script>
+    function toggleTheme() {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      applyTheme(currentTheme);
+      localStorage.setItem('theme', currentTheme);
+    }
+    function applyTheme(theme) {
+      document.body.setAttribute('data-theme', theme === 'dark' ? 'dark' : '');
+      document.getElementById('theme-icon').className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      applyLanguage(currentLang);
+      localStorage.setItem('language', currentLang);
+    }
+    function applyLanguage(lang) {
+      const html = document.documentElement;
+      const langText = document.getElementById('lang-text');
+      if (lang === 'en') {
+        html.lang = 'en'; html.dir = 'ltr'; langText.textContent = 'عر';
+        document.querySelectorAll('[data-ar][data-en]').forEach(el => el.textContent = el.getAttribute('data-en'));
+      } else {
+        html.lang = 'ar'; html.dir = 'rtl'; langText.textContent = 'EN';
+        document.querySelectorAll('[data-ar][data-en]').forEach(el => el.textContent = el.getAttribute('data-ar'));
+      }
+    }
+  </script>
 </body>
 </html>
